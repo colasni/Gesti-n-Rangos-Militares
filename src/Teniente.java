@@ -1,4 +1,19 @@
-package PACKAGE_NAME;
+public class Teniente extends Rango{
 
-public class Teniente {
+    String unidad;
+
+    @Override
+    void realizarAccion() {
+
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+
+    }
+
+    @Override
+    public void reportarEstado() {
+
+    }
 }

@@ -1,4 +1,18 @@
-package PACKAGE_NAME;
+public class SoldadoRaso extends Rango{
 
-public class SoldadoRaso {
+
+    @Override
+    void realizarAccion() {
+
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+
+    }
+
+    @Override
+    public void reportarEstado() {
+
+    }
 }

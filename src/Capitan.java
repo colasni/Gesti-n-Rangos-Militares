@@ -1,4 +1,19 @@
-package PACKAGE_NAME;
+public class Capitan extends Rango{
 
-public class Capitan {
+    int cantidadSoldadosBajoSuMando;
+
+    @Override
+    void realizarAccion() {
+
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+
+    }
+
+    @Override
+    public void reportarEstado() {
+
+    }
 }

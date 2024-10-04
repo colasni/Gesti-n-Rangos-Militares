@@ -1,4 +1,8 @@
-package PACKAGE_NAME;
+public abstract class Rango extends Soldado implements OperacionesMilitares{
 
-public class Rango {
+    int nivel;
+
+    abstract void realizarAccion();
+
+    
 }

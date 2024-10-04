@@ -1,4 +1,19 @@
-package PACKAGE_NAME;
+public class Coronel extends Rango{
 
-public class Coronel {
+    String estrategia;
+
+    @Override
+    void realizarAccion() {
+
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+
+    }
+
+    @Override
+    public void reportarEstado() {
+
+    }
 }

@@ -19,7 +19,6 @@ public class ImprimirDatos {
     }
 
     public void imprimirCoronel(){
-
     }
 
 

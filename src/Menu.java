@@ -1,10 +1,12 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
 
     private String nombre;
-    private int ID;
-    private int rango;
+    private String id;
+    private int nivel;
+    private String estrategia;
 
     public Menu(){
 
@@ -15,6 +17,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         int opcion1=0;
         ImprimirDatos imprimirDatos = new ImprimirDatos();
+        ArrayList <Coronel> coroneles = new ArrayList<Coronel>();
 
         do {
 
@@ -44,8 +47,17 @@ public class Menu {
                             System.out.println("Digite 3 para Capitan");
                             System.out.println("Digite 4 para Coronel");
 
-                            rango = scanner.nextInt();
-                            validar = true;
+                            nivel = scanner.nextInt();
+
+                            if (nivel == 4)
+                                System.out.println("Numero de indentificación:");
+                                id = scanner.next();
+                                System.out.println("Dime la estrategia del coronel");
+                                estrategia = scanner.next();
+                                Coronel coronel = new Coronel(nombre,id,"coronel",nivel,estrategia);
+                                coroneles.add(coronel);
+
+                                validar = true;
                         } else {
                             System.out.println("PORFAVOR ESCRIBA UN NOMBRE VALIDO PARA EL SOLDADO");
                         }
@@ -63,20 +75,19 @@ public class Menu {
                         System.out.println("Digite 3 para Capitan");
                         System.out.println("Digite 4 para Coronel");
 
-                        rango = scanner.nextInt();
-                        if(rango==1) {
+                        nivel = scanner.nextInt();
+                        if(nivel==1) {
                             imprimirDatos.imprimirSoldadoRaso();
-                        }else if(rango==2) {
+                        }else if(nivel==2) {
                             imprimirDatos.imprimirTeniente();
-                        }else if(rango==3) {
+                        }else if(nivel==3) {
                             imprimirDatos.imprimirCapitan();
-                        }else if(rango==4) {
-                            imprimirDatos.imprimirCoronel();
+                        }else if(nivel==4) {
                         }
 
 
                         System.out.println("Digite el ID del soldado que desea modificar: ");
-                        ID = scanner.nextInt();
+                        id = scanner.next();
 
                         //REALIZAR LA LOGICA DE EDITAR
 
@@ -93,21 +104,21 @@ public class Menu {
                     System.out.println("Digite 3 para Capitan");
                     System.out.println("Digite 4 para Coronel");
 
-                    rango = scanner.nextInt();
-                    if(rango==1) {
+                    nivel = scanner.nextInt();
+                    if(nivel==1) {
                         imprimirDatos.imprimirCapitan();
-                    }else if(rango==2) {
+                    }else if(nivel==2) {
                         imprimirDatos.imprimirTeniente();
-                    }else if(rango==3) {
+                    }else if(nivel==3) {
                         imprimirDatos.imprimirCapitan();
-                    }else if(rango==4) {
-                        imprimirDatos.imprimirCoronel();
+                    }else if(nivel==4) {
+                        for (int i=0; i<coroneles.size(); i++) {
+                            System.out.println("Coronel: " + coroneles.get(i).getNombre());
+                            System.out.println("Identificación: " + coroneles.get(i).getId());
+                            System.out.println("Nivel: " + coroneles.get(i).getNivel());
+                            System.out.println("Estrategia: " + coroneles.get(i).getEstrategia());
+                        }
                     }
-
-
-                    System.out.println("Digite el ID del soldado que desea modificar: ");
-                    ID = scanner.nextInt();
-                    break;
                 case 4:
                     System.out.println("");
                     break;

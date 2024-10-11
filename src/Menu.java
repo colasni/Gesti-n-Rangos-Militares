@@ -6,10 +6,19 @@ public class Menu {
     private String nombre;
     private String id;
     private int nivel;
+    private String unidad;
+    private int cantidadSoldadosBajoSuMando;
     private String estrategia;
+    private ArrayList<SoldadoRaso> soldadosRasos;
+    private ArrayList<Teniente> tenientes;
+    private ArrayList<Capitan> capitanes;
+    private ArrayList<Coronel> coroneles;
 
     public Menu(){
-
+        soldadosRasos = new ArrayList<SoldadoRaso>();
+        tenientes = new ArrayList<Teniente>();
+        capitanes = new ArrayList<Capitan>();
+        coroneles = new ArrayList<Coronel>();
     }
 
     public void imprimirMenu(){
@@ -17,7 +26,6 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         int opcion1=0;
         ImprimirDatos imprimirDatos = new ImprimirDatos();
-        ArrayList <Coronel> coroneles = new ArrayList<Coronel>();
 
         do {
 
@@ -28,8 +36,8 @@ public class Menu {
             System.out.println("4. Asignar mision");
             System.out.println("5. Salir");
             System.out.println("Elige una opcion: ");
-
             opcion1 = scanner.nextInt();
+
             boolean validar = false;
             switch(opcion1){
                 case 1:
@@ -37,27 +45,57 @@ public class Menu {
                     while(validar==false) {
                         System.out.println("");
                         System.out.println("Digite el nombre del soldado: ");
-
                         nombre = scanner.next();
 
                         if (nombre.matches("^[a-zA-Z]+$")) {
+
                             System.out.println("Tipo de rango que tendra el soldado:");
                             System.out.println("Digite 1 para Soldado raso");
                             System.out.println("Digite 2 para Teniente");
                             System.out.println("Digite 3 para Capitan");
                             System.out.println("Digite 4 para Coronel");
-
                             nivel = scanner.nextInt();
 
-                            if (nivel == 4)
-                                System.out.println("Numero de indentificación:");
-                                id = scanner.next();
-                                System.out.println("Dime la estrategia del coronel");
+                            System.out.println("Numero de indentificación:");
+                            id = scanner.next();
+
+                            if (nivel == 1) {
+                                SoldadoRaso soldadoRaso = new SoldadoRaso(nombre, id, "Soldado raso", nivel);
+                                soldadosRasos.add(soldadoRaso);
+
+                                validar = true;
+                            }
+
+                            if (nivel == 2) {
+                                System.out.println("Dime la unidad del Teniente");
+                                unidad = scanner.next();
+
+                                Teniente teniente = new Teniente(nombre, id, "Teniente", nivel, unidad);
+                                tenientes.add(teniente);
+
+                                validar = true;
+                            }
+
+                            if (nivel == 3) {
+                                System.out.println("Dime la cantidad de soldados bajo el mando del Capitan");
+                                cantidadSoldadosBajoSuMando = scanner.nextInt();
+
+                                Capitan capitan = new Capitan(nombre, id, "Capitan", nivel, cantidadSoldadosBajoSuMando);
+                                capitanes.add(capitan);
+
+                                validar = true;
+                            }
+
+
+                            if (nivel == 4) {
+                                System.out.println("Dime la estrategia del Coronel");
                                 estrategia = scanner.next();
-                                Coronel coronel = new Coronel(nombre,id,"coronel",nivel,estrategia);
+
+                                Coronel coronel = new Coronel(nombre, id, "Coronel", nivel, estrategia);
                                 coroneles.add(coronel);
 
                                 validar = true;
+                            }
                         } else {
                             System.out.println("PORFAVOR ESCRIBA UN NOMBRE VALIDO PARA EL SOLDADO");
                         }
@@ -77,11 +115,11 @@ public class Menu {
 
                         nivel = scanner.nextInt();
                         if(nivel==1) {
-                            imprimirDatos.imprimirSoldadoRaso();
+                            //imprimirDatos.imprimirSoldadoRaso();
                         }else if(nivel==2) {
-                            imprimirDatos.imprimirTeniente();
+                            //imprimirDatos.imprimirTeniente();
                         }else if(nivel==3) {
-                            imprimirDatos.imprimirCapitan();
+                            //imprimirDatos.imprimirCapitan();
                         }else if(nivel==4) {
                         }
 
@@ -97,7 +135,7 @@ public class Menu {
                     break;
                 case 3:
 
-                    System.out.println("");
+                    System.out.println();
                     System.out.println("Digite el nivel del rango para ver informacion personalizada");
                     System.out.println("Digite 1 para SoldadoRaso");
                     System.out.println("Digite 2 para Teniente");
@@ -106,18 +144,13 @@ public class Menu {
 
                     nivel = scanner.nextInt();
                     if(nivel==1) {
-                        imprimirDatos.imprimirCapitan();
+                        imprimirDatos.imprimirSoldadoRaso(soldadosRasos);
                     }else if(nivel==2) {
-                        imprimirDatos.imprimirTeniente();
+                        imprimirDatos.imprimirTeniente(tenientes);
                     }else if(nivel==3) {
-                        imprimirDatos.imprimirCapitan();
+                        imprimirDatos.imprimirCapitan(capitanes);
                     }else if(nivel==4) {
-                        for (int i=0; i<coroneles.size(); i++) {
-                            System.out.println("Coronel: " + coroneles.get(i).getNombre());
-                            System.out.println("Identificación: " + coroneles.get(i).getId());
-                            System.out.println("Nivel: " + coroneles.get(i).getNivel());
-                            System.out.println("Estrategia: " + coroneles.get(i).getEstrategia());
-                        }
+                        imprimirDatos.imprimirCoronel(coroneles);
                     }
                 case 4:
                     System.out.println("");

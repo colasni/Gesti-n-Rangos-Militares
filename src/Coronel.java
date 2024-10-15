@@ -1,9 +1,16 @@
 public class Coronel extends Rango{
-
-    String estrategia;
+    private String nombre;
+    private String id;
+    private String rango;
+    private int nivel;
+    private String estrategia;
 
     public Coronel(String nombre,String id,String rango,int nivel,String estrategia) {
         super(nombre,id,rango,nivel);
+        this.nombre = nombre;
+        this.id = id;
+        this.rango = rango;
+        this.nivel = nivel;
         this.estrategia = estrategia;
     }
 
@@ -21,12 +28,15 @@ public class Coronel extends Rango{
     public void reportarEstado() {
 
     }
-    public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Id: " + id);
-        System.out.println("Rango: " + rango);
-        System.out.println("nivel: " + nivel);
-        System.out.println("estrategia: " + estrategia);
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getEstrategia() {
@@ -37,5 +47,33 @@ public class Coronel extends Rango{
         this.estrategia = estrategia;
     }
 
-    
+    @Override
+    public int getNivel() {
+        return nivel;
+    }
+
+    @Override
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    @Override
+    public String getRango() {
+        return rango;
+    }
+
+    @Override
+    public void setRango(String rango) {
+        this.rango = rango;
+    }
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
 }

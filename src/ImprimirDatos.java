@@ -10,7 +10,7 @@ public class ImprimirDatos {
     public void imprimirSoldadoRaso(ArrayList<SoldadoRaso> soldadoRasos) {
         for (Soldado soldado : soldadoRasos) {
             System.out.println("Identificación: " + soldado.getId());
-            System.out.println("Coronel: " + soldado.getNombre());
+            System.out.println("Nombre: " + soldado.getNombre());
             System.out.println("Rango: " + soldado.getRango());
             System.out.println();
         }

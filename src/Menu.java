@@ -114,20 +114,52 @@ public class Menu {
                         System.out.println("Digite 4 para Coronel");
 
                         nivel = scanner.nextInt();
-                        if(nivel==1) {
-                            //imprimirDatos.imprimirSoldadoRaso();
-                        }else if(nivel==2) {
+                        if(nivel == 1) {
+                            boolean seguir = true;
+                            while (seguir) {
+                                System.out.println("Digite el ID del soldado que desea modificar: ");
+                                id = scanner.next();
+                                boolean encontrado = false;
+                        
+                                for (SoldadoRaso soldado : soldadosRasos) {
+                                    if (soldado.getId().equals(id)) {
+                                        System.out.println("Soldado encontrado. Digite el nuevo nombre del soldado: ");
+                                        String nuevoNombre = scanner.next();
+                                        
+                                        if (nuevoNombre.matches("^[a-zA-Z]+$")) {
+                                            soldado.setNombre(nuevoNombre);
+                                            System.out.println("Nombre actualizado correctamente.");
+                                        } else {
+                                            System.out.println("Nombre no válido. No se realizaron cambios.");
+                                        }
+                                        
+                                        encontrado = true;
+                                        break;
+                                    }
+                                }
+                                
+                                if (!encontrado) {
+                                    System.out.println("Soldado no encontrado.");
+                                }
+                        
+                                System.out.println("Quiere seguir actualizando datos?");
+                                System.out.println("Digite 1 para seguir actualizando datos");
+                                System.out.println("Digite 2 para salir");
+                                int op = scanner.nextInt();
+                                
+                                if (op == 2) {
+                                    break;  // Cambiar 'seguir' a 'false' si se elige la opción 2
+                                }
+                            }
+                            validar = true;
+                        }
+                        
+                        else if(nivel==2) {
                             //imprimirDatos.imprimirTeniente();
                         }else if(nivel==3) {
                             //imprimirDatos.imprimirCapitan();
                         }else if(nivel==4) {
                         }
-
-
-                        System.out.println("Digite el ID del soldado que desea modificar: ");
-                        id = scanner.next();
-
-                        //REALIZAR LA LOGICA DE EDITAR
 
                         validar = true;
 

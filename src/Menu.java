@@ -112,26 +112,57 @@ public class Menu {
                         System.out.println("Digite 2 para Teniente");
                         System.out.println("Digite 3 para Capitan");
                         System.out.println("Digite 4 para Coronel");
-
                         nivel = scanner.nextInt();
+                        System.out.println("Digite el ID del soldado que desea modificar: ");
+                        id = scanner.next();
                         if(nivel==1) {
-                            //imprimirDatos.imprimirSoldadoRaso();
+                            //imprimirDatos.imprimirSoldadoRaso(soldadosRasos);
                         }else if(nivel==2) {
                             //imprimirDatos.imprimirTeniente();
                         }else if(nivel==3) {
                             //imprimirDatos.imprimirCapitan();
                         }else if(nivel==4) {
+                            boolean encontrado = false;
+                            for (Coronel c : coroneles) {
+                                if (c.getId().equals(id)) {
+                                    System.out.println("Coronel encontrado: " + c.getNombre());
+                                    encontrado = true;                                                             
+                                    
+                                    // Modificar nombre
+                                    System.out.println("¿Desea modificar el nombre? (S/N)");
+                                    String respuesta = scanner.next();
+                                    if (respuesta.equalsIgnoreCase("S")) {
+                                        System.out.println("Ingrese el nuevo nombre:");
+                                        String nuevoNombre = scanner.next();
+                                        c.setNombre(nuevoNombre);
+                                        System.out.println("Nombre actualizado a: " + c.getNombre());
+                                    }
+                                    
+                                    // Modificar estrategia
+                                    System.out.println("¿Desea modificar la estrategia? (S/N)");
+                                    respuesta = scanner.next();
+                                    if (respuesta.equalsIgnoreCase("S")) {
+                                        System.out.println("Ingrese la nueva estrategia:");
+                                        String nuevaEstrategia = scanner.next();
+                                        c.setEstrategia(nuevaEstrategia);
+                                        System.out.println("Estrategia actualizada a: " + c.getEstrategia());
+                                    
+                                    break;  // Salimos del bucle una vez que encontramos el coronel
+                                }
+                            }
+
+
+                            if (!encontrado) {
+                                System.out.println("No se encontró ningún coronel con el ID: " + id);
+                            }
                         }
 
-
-                        System.out.println("Digite el ID del soldado que desea modificar: ");
-                        id = scanner.next();
-
-                        //REALIZAR LA LOGICA DE EDITAR
+                
 
                         validar = true;
 
-                    }
+                        }
+                }
                     break;
                 case 3:
 

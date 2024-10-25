@@ -3,6 +3,7 @@ public class Soldado {
     String nombre;
     String id;
     String rango;
+    String mision;
 
     public Soldado(String nombre, String id, String rango) {
         this.nombre = nombre;
@@ -10,6 +11,11 @@ public class Soldado {
         this.rango = rango;
     }
 
+    public void asignarMision(String mision) {
+        this.mision = mision;
+        System.out.println("Mision asignada: " + mision);
+    }
+    
     public void mostrarInformacion() {
 
     }
@@ -36,6 +42,10 @@ public class Soldado {
 
     public void setRango(String rango) {
         this.rango = rango;
+    }
+
+    public String getMision() {
+        return mision;
     }
 
 }

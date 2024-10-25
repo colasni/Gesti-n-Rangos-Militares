@@ -4,7 +4,7 @@ public class SoldadoRaso extends Rango{
     private String id;
     private String rango;
     private int nivel;
-    
+    private String mision; 
     
     public SoldadoRaso(String nombre, String id, String rango, int nivel) {
         super(nombre, id, rango, nivel);
@@ -22,7 +22,8 @@ public class SoldadoRaso extends Rango{
 
     @Override
     public void asignarMision(String mision) {
-
+        this.mision = mision;
+        System.out.println("Mision asignada: " + mision);
     }
 
     @Override
@@ -69,4 +70,6 @@ public class SoldadoRaso extends Rango{
     public void setId(String id) {
         this.id = id;
     }
+
+
 }

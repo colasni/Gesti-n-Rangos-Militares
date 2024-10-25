@@ -184,9 +184,32 @@ public class Menu {
                     }else if(nivel==4) {
                         imprimirDatos.imprimirCoronel(coroneles);
                     }
-                case 4:
-                    System.out.println("");
                     break;
+                case 4:
+                    System.out.println("Digite el nivel del rango para asignar mision");
+                    System.out.println("Digite 1 para SoldadoRaso");
+                    System.out.println("Digite 2 para Teniente");
+                    System.out.println("Digite 3 para Capitan");
+                    System.out.println("Digite 4 para Coronel");
+                    
+                    nivel = scanner.nextInt();
+                    if(nivel==1) {
+                        System.out.println("Digite el ID del soldado raso al que desea asignar la misión: ");
+                        id = scanner.next();
+                        for (SoldadoRaso soldado : soldadosRasos) {
+                            if (soldado.getId().equals(id)) {
+                                System.out.println("Digite la misión que desea asignar al soldado raso: ");
+                                String mision = scanner.next();
+                                soldado.asignarMision(mision);
+                                System.out.println("Misión asignada correctamente.");
+                                break;
+                                }
+                            else {
+                                System.out.println("Soldado no encontrado.");
+                            }
+                        }
+                    }
+                    
                 case 5:
                     System.out.println("");
                     break;

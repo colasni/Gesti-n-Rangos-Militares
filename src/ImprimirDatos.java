@@ -12,7 +12,13 @@ public class ImprimirDatos {
             System.out.println("Identificación: " + soldado.getId());
             System.out.println("Nombre: " + soldado.getNombre());
             System.out.println("Rango: " + soldado.getRango());
-            System.out.println();
+            if (soldado.getMision() == null) {
+                System.out.println("mision: No tiene mision");                
+            }
+            else {
+                System.out.println("mision: " + soldado.getMision());
+            }
+
         }
     }
 

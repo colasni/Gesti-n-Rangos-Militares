@@ -115,14 +115,79 @@ public class Menu {
                         nivel = scanner.nextInt();
                         System.out.println("Digite el ID del soldado que desea modificar: ");
                         id = scanner.next();
+                        boolean encontrado = false;
                         if(nivel==1) {
-                            //imprimirDatos.imprimirSoldadoRaso(soldadosRasos);
+                            for(Soldado s : soldadosRasos){
+                                if(s.getId().equals(id)){
+                                    System.out.println("Soldado raso encontrado: " + s.getNombre());
+                                    encontrado = true;
+
+                                    System.out.println("¿Desea modificar el nombre? (S/N)");
+                                    String respuesta = scanner.next();
+                                    if (respuesta.equalsIgnoreCase("S")) {
+                                        System.out.println("Ingrese el nuevo nombre:");
+                                        String nuevoNombre = scanner.next();
+                                        s.setNombre(nuevoNombre);
+                                        System.out.println("Nombre actualizado a: " + s.getNombre());
+                                    break;
+                                    }
+                                }
+
+                                if (!encontrado) {
+                                    System.out.println("No se encontró ningún soldado raso con el ID: " + id);
+                                }
+                            }
+
+                            validar = true;
+
                         }else if(nivel==2) {
-                            //imprimirDatos.imprimirTeniente();
+                            for(Teniente t : tenientes){
+                                if(t.getId().equals(id)){
+                                    System.out.println("Teniente encontrado: " + t.getNombre());
+                                    encontrado = true;
+
+                                    System.out.println("¿Desea modificar el nombre? (S/N)");
+                                    String respuesta = scanner.next();
+                                    if (respuesta.equalsIgnoreCase("S")) {
+                                        System.out.println("Ingrese el nuevo nombre:");
+                                        String nuevoNombre = scanner.next();
+                                        t.setNombre(nuevoNombre);
+                                        System.out.println("Nombre actualizado a: " + t.getNombre());
+
+                                        break;
+                                    }
+                                }
+                                if (!encontrado) {
+                                    System.out.println("No se encontró ningún teniente con el ID: " + id);
+                                }
+                            }
+
+                            validar = true;
                         }else if(nivel==3) {
-                            //imprimirDatos.imprimirCapitan();
+                            for(Capitan c : capitanes){
+                                if(c.getId().equals(id)){
+                                    System.out.println("Capitan encontrado: " + c.getNombre());
+                                    encontrado = true;
+
+                                    System.out.println("¿Desea modificar el nombre? (S/N)");
+                                    String respuesta = scanner.next();
+                                    if (respuesta.equalsIgnoreCase("S")) {
+                                        System.out.println("Ingrese el nuevo nombre:");
+                                        String nuevoNombre = scanner.next();
+                                        c.setNombre(nuevoNombre);
+                                        System.out.println("Nombre actualizado a: " + c.getNombre());
+                                    break;
+                                    }
+                                }
+
+                                if (!encontrado) {
+                                    System.out.println("No se encontró ningún capitan con el ID: " + id);
+                                }
+                            }
+
+                            validar = true;
+
                         }else if(nivel==4) {
-                            boolean encontrado = false;
                             for (Coronel c : coroneles) {
                                 if (c.getId().equals(id)) {
                                     System.out.println("Coronel encontrado: " + c.getNombre());
@@ -158,7 +223,6 @@ public class Menu {
                         }
 
                 
-
                         validar = true;
 
                         }

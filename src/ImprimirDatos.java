@@ -10,9 +10,16 @@ public class ImprimirDatos {
     public void imprimirSoldadoRaso(ArrayList<SoldadoRaso> soldadoRasos) {
         for (Soldado soldado : soldadoRasos) {
             System.out.println("Identificación: " + soldado.getId());
-            System.out.println("Coronel: " + soldado.getNombre());
+            System.out.println("Nombre: " + soldado.getNombre());
             System.out.println("Rango: " + soldado.getRango());
-            System.out.println();
+            if (soldado.getMision() == null) {
+                System.out.println("mision: No tiene mision");                
+            }
+            else {
+                System.out.println("mision: " + soldado.getMision());
+            }
+            System.out.println("====================================");
+
         }
     }
 
@@ -22,7 +29,13 @@ public class ImprimirDatos {
             System.out.println("Nombre: " + teniente.getNombre());
             System.out.println("Rango: " + teniente.getRango());
             System.out.println("Unidad: " + teniente.getUnidad());
-            System.out.println();
+            if (teniente.getMision() == null) {
+                System.out.println("mision: No tiene mision");                
+            }
+            else {
+                System.out.println("mision: " + teniente.getMision());
+            }
+            System.out.println("====================================");
         }
     }
 
@@ -33,7 +46,13 @@ public class ImprimirDatos {
             System.out.println("Nombre: " + capitan.getNombre());
             System.out.println("Rango: " + capitan.getRango());
             System.out.println("Estrategia: " + capitan.getCantidadSoldadosBajoSuMando());
-            System.out.println();
+            if (capitan.getMision() == null) {
+                System.out.println("mision: No tiene mision");                
+            }
+            else {
+                System.out.println("mision: " + capitan.getMision());
+            }
+            System.out.println("====================================");
         }
     }
 
@@ -43,7 +62,13 @@ public class ImprimirDatos {
             System.out.println("Nombre: " + coronel.getNombre());
             System.out.println("Rango: " + coronel.getRango());
             System.out.println("Estrategia: " + coronel.getEstrategia());
-            System.out.println();
+            if (coronel.getMision() == null) {
+                System.out.println("mision: No tiene mision");                
+            }
+            else {
+                System.out.println("mision: " + coronel.getMision());
+            }
+            System.out.println("====================================");
         }
     }
 

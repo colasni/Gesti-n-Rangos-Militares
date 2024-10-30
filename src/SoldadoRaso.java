@@ -22,7 +22,8 @@ public class SoldadoRaso extends Rango{
 
     @Override
     public void asignarMision(String mision) {
-
+        this.mision = mision;
+        System.out.println("Mision asignada: " + mision);
     }
 
     @Override
@@ -68,5 +69,10 @@ public class SoldadoRaso extends Rango{
     @Override
     public void setId(String id) {
         this.id = id;
+    }
+    
+    @Override
+    public String getMision() {
+        return mision;
     }
 }

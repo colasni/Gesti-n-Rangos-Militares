@@ -3,12 +3,23 @@ public class Soldado {
     String nombre;
     String id;
     String rango;
+    String mision;
 
     public Soldado(String nombre, String id, String rango) {
         this.nombre = nombre;
         this.id = id;
-        this.rango = rango;
+        this.rango = rango;  
     }
+
+    public void asignarMision(String mision) {
+        this.mision = mision;
+        System.out.println("Mision asignada: " + mision);
+    }
+
+    public String getMision() {
+        return mision;
+    }
+
 
     public void mostrarInformacion() {
 

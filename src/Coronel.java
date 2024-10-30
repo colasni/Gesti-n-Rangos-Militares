@@ -21,9 +21,15 @@ public class Coronel extends Rango{
 
     @Override
     public void asignarMision(String mision) {
-
+        this.mision = mision;
+        System.out.println("Mision asignada: " + mision);
     }
 
+    @Override
+    public String getMision() {
+        return mision;
+    }
+    
     @Override
     public void reportarEstado() {
 

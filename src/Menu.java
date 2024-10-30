@@ -183,9 +183,67 @@ public class Menu {
                     }else if(nivel==4) {
                         imprimirDatos.imprimirCoronel(coroneles);
                     }
-                case 4:
-                    System.out.println("");
                     break;
+                case 4:
+                    System.out.println("Digite el nivel del rango para asignar mision");
+                    System.out.println("Digite 1 para SoldadoRaso");
+                    System.out.println("Digite 2 para Teniente");
+                    System.out.println("Digite 3 para Capitan");
+                    System.out.println("Digite 4 para Coronel");
+                
+                    nivel = scanner.nextInt();
+                    System.out.println("Digite el ID del soldado al que desea asignar la misión: ");
+                    id = scanner.next();
+                    boolean encontrado = false;
+
+                    if(nivel == 1) {
+                        for (SoldadoRaso soldado : soldadosRasos) {
+                            if (soldado.getId().equals(id)) {
+                                System.out.println("Digite la misión que desea asignar al soldado raso: ");
+                                String mision = scanner.next();
+                                soldado.asignarMision(mision);
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                    } else if(nivel == 2) {
+                        for (Teniente teniente : tenientes) {
+                            if (teniente.getId().equals(id)) {
+                                System.out.println("Digite la misión que desea asignar al teniente: ");
+                                String mision = scanner.next();
+                                teniente.asignarMision(mision);
+                                System.out.println("Misión asignada correctamente.");
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                    } else if(nivel == 3) {
+                        for (Capitan capitan : capitanes) {
+                            if (capitan.getId().equals(id)) {
+                                System.out.println("Digite la misión que desea asignar al capitán: ");
+                                String mision = scanner.next();
+                                capitan.asignarMision(mision);
+                                System.out.println("Misión asignada correctamente.");
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                    } else if(nivel == 4) {
+                        for (Coronel coronel : coroneles) {
+                            if (coronel.getId().equals(id)) {
+                                System.out.println("Digite la misión que desea asignar al coronel: ");
+                                String mision = scanner.next();
+                                coronel.asignarMision(mision);
+                                System.out.println("Misión asignada correctamente.");
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (encontrado == false) {
+                        System.out.println("Soldado no encontrado.");
+                    }
                 case 5:
                     System.out.println("");
                     break;

@@ -115,12 +115,19 @@ public class Menu {
 
                         nivel = scanner.nextInt();
                         if(nivel==1) {
-                            //imprimirDatos.imprimirSoldadoRaso();
-                        }else if(nivel==2) {
-                            //imprimirDatos.imprimirTeniente();
-                        }else if(nivel==3) {
-                            //imprimirDatos.imprimirCapitan();
-                        }else if(nivel==4) {
+                            imprimirDatos.imprimirSoldadoRaso(soldadosRasos);
+                        }
+
+                        if(nivel==2) {
+                            imprimirDatos.imprimirTeniente(tenientes);
+                        }
+
+                        if(nivel==3) {
+                            imprimirDatos.imprimirCapitan(capitanes);
+                        }
+
+                        if(nivel==4) {
+                            imprimirDatos.imprimirCoronel(coroneles);
                         }
 
 
@@ -145,17 +152,20 @@ public class Menu {
                     nivel = scanner.nextInt();
                     if(nivel==1) {
                         imprimirDatos.imprimirSoldadoRaso(soldadosRasos);
-                    }else if(nivel==2) {
+                    }
+
+                    if(nivel==2) {
                         imprimirDatos.imprimirTeniente(tenientes);
-                    }else if(nivel==3) {
+                    }
+
+                    if(nivel==3) {
                         imprimirDatos.imprimirCapitan(capitanes);
-                    }else if(nivel==4) {
+                    }
+
+                    if(nivel==4) {
                         imprimirDatos.imprimirCoronel(coroneles);
                     }
                 case 4:
-                    System.out.println("");
-                    break;
-                case 5:
                     System.out.println("");
                     break;
 

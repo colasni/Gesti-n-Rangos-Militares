@@ -45,7 +45,7 @@ public class ImprimirDatos {
             System.out.println("Identificación: " + capitan.getId());
             System.out.println("Nombre: " + capitan.getNombre());
             System.out.println("Rango: " + capitan.getRango());
-            System.out.println("Estrategia: " + capitan.getCantidadSoldadosBajoSuMando());
+            System.out.println("Cantidad soldados bajo su mando: " + capitan.getCantidadSoldadosBajoSuMando());
             if (capitan.getMision() == null) {
                 System.out.println("mision: No tiene mision");                
             }

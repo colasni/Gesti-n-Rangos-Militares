@@ -20,7 +20,7 @@ public class Capitan extends Rango{
 
     @Override
     void realizarAccion() {
-
+        String accion = "Coordina misiones y lidera estrategias";
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Capitan extends Rango{
     }
 
     @Override
-    public void reportarEstado() {
+    public void reportarEstado(String estado) {
 
     }
 
@@ -86,4 +86,6 @@ public class Capitan extends Rango{
     public void setId(String id) {
         this.id = id;
     }
+
+
 }

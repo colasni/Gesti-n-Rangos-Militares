@@ -1,3 +1,4 @@
+
 public class Teniente extends Rango{
 
     private String nombre;
@@ -19,7 +20,7 @@ public class Teniente extends Rango{
 
     @Override
     void realizarAccion() {
-
+        String accion = "Supervisar soldados rasos";
     }
 
     @Override
@@ -34,7 +35,7 @@ public class Teniente extends Rango{
     }
 
     @Override
-    public void reportarEstado() {
+    public void reportarEstado(String estado) {
 
     }
 

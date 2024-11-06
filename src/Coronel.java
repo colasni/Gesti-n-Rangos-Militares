@@ -16,7 +16,7 @@ public class Coronel extends Rango{
 
     @Override
     void realizarAccion() {
-
+        String accion = "Establece planes a largo plazo y ordena misiones importantes";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Coronel extends Rango{
     }
     
     @Override
-    public void reportarEstado() {
+    public void reportarEstado(String estado) {
 
     }
 

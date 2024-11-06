@@ -17,7 +17,7 @@ public class SoldadoRaso extends Rango{
 
     @Override
     void realizarAccion() {
-
+        String accion = "Seguir ordenes";
     }
 
     @Override
@@ -27,7 +27,7 @@ public class SoldadoRaso extends Rango{
     }
 
     @Override
-    public void reportarEstado() {
+    public void reportarEstado(String estado) {
 
     }
 

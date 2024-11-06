@@ -1,3 +1,4 @@
+package militar;
 public abstract class Rango extends Soldado implements OperacionesMilitares{
 
     int nivel;

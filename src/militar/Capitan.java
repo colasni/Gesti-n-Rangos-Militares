@@ -1,18 +1,23 @@
-public class Coronel extends Rango{
+package militar;
+public class Capitan extends Rango{
+
     private String nombre;
     private String id;
     private String rango;
     private int nivel;
-    private String estrategia;
+    private int cantidadSoldadosBajoSuMando;
 
-    public Coronel(String nombre,String id,String rango,int nivel,String estrategia) {
-        super(nombre,id,rango,nivel);
+    public Capitan(String nombre, String id, String rango, int nivel, int cantidadSoldadosBajoSuMando) {
+        super(nombre, id, rango, nivel);
         this.nombre = nombre;
         this.id = id;
         this.rango = rango;
         this.nivel = nivel;
-        this.estrategia = estrategia;
+        this.cantidadSoldadosBajoSuMando = cantidadSoldadosBajoSuMando;
+        //TODO Auto-generated constructor stub
     }
+
+
 
     @Override
     void realizarAccion() {
@@ -29,7 +34,7 @@ public class Coronel extends Rango{
     public String getMision() {
         return mision;
     }
-    
+
     @Override
     public void reportarEstado() {
 
@@ -45,12 +50,12 @@ public class Coronel extends Rango{
         this.nombre = nombre;
     }
 
-    public String getEstrategia() {
-        return estrategia;
+    public int getCantidadSoldadosBajoSuMando() {
+        return cantidadSoldadosBajoSuMando;
     }
 
-    public void setEstrategia(String estrategia) {
-        this.estrategia = estrategia;
+    public void setCantidadSoldadosBajoSuMando(int cantidadSoldadosBajoSuMando) {
+        this.cantidadSoldadosBajoSuMando = cantidadSoldadosBajoSuMando;
     }
 
     @Override

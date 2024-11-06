@@ -1,21 +1,19 @@
-public class Teniente extends Rango{
-
+package militar;
+public class Coronel extends Rango{
     private String nombre;
     private String id;
     private String rango;
     private int nivel;
-    private String unidad;
+    private String estrategia;
 
-    public Teniente(String nombre, String id, String rango, int nivel, String unidad) {
-        super(nombre, id, rango, nivel);
+    public Coronel(String nombre,String id,String rango,int nivel,String estrategia) {
+        super(nombre,id,rango,nivel);
         this.nombre = nombre;
         this.id = id;
         this.rango = rango;
         this.nivel = nivel;
-        this.unidad = unidad;
-        //TODO Auto-generated constructor stub
+        this.estrategia = estrategia;
     }
-
 
     @Override
     void realizarAccion() {
@@ -32,7 +30,7 @@ public class Teniente extends Rango{
     public String getMision() {
         return mision;
     }
-
+    
     @Override
     public void reportarEstado() {
 
@@ -48,12 +46,12 @@ public class Teniente extends Rango{
         this.nombre = nombre;
     }
 
-    public String getUnidad() {
-        return unidad;
+    public String getEstrategia() {
+        return estrategia;
     }
 
-    public void setUnidad(String unidad) {
-        this.unidad = unidad;
+    public void setEstrategia(String estrategia) {
+        this.estrategia = estrategia;
     }
 
     @Override

@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+import militar.Capitan;
+import militar.Coronel;
+import militar.Soldado;
+import militar.SoldadoRaso;
+import militar.Teniente;
+
 public class ImprimirDatos {
 
     public ImprimirDatos() {

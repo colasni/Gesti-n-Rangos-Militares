@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import militar.Capitan;
+import militar.Coronel;
+import militar.Soldado;
+import militar.SoldadoRaso;
+import militar.Teniente;
+
 public class Menu {
 
     private String nombre;

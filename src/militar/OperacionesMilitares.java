@@ -1,3 +1,4 @@
+package militar;
 public interface OperacionesMilitares {
 
     void asignarMision(String mision);

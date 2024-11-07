@@ -34,7 +34,6 @@ public class Menu {
         ImprimirDatos imprimirDatos = new ImprimirDatos();
 
         do {
-
             System.out.println("");
             System.out.println("1. Crear soldado");
             System.out.println("2. Modificar soldado");

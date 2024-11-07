@@ -5,6 +5,7 @@ public class Soldado {
     String id;
     String rango;
     String mision;
+    String estado;
 
     public Soldado(String nombre, String id, String rango) {
         this.nombre = nombre;
@@ -15,6 +16,20 @@ public class Soldado {
     public void asignarMision(String mision) {
         this.mision = mision;
         System.out.println("Mision asignada: " + mision);
+    }
+
+    public void reportarEstado(String estado) {
+        this.estado = estado;
+        System.out.println("Estado asignado: " + estado);
+
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getMision() {

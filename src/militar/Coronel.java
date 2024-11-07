@@ -17,7 +17,7 @@ public class Coronel extends Rango{
 
     @Override
     void realizarAccion() {
-
+        String accion = "Establece planes a largo plazo y ordena misiones importantes";
     }
 
     @Override
@@ -32,9 +32,20 @@ public class Coronel extends Rango{
     }
     
     @Override
-    public void reportarEstado() {
+    public void reportarEstado(String estado) {
+        this.estado = estado;
+        System.out.println("Estado asignado: " + estado);
 
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
 
     @Override
     public String getNombre() {

@@ -18,7 +18,7 @@ public class SoldadoRaso extends Rango{
 
     @Override
     void realizarAccion() {
-
+        String accion = "Seguir ordenes";
     }
 
     @Override
@@ -28,8 +28,18 @@ public class SoldadoRaso extends Rango{
     }
 
     @Override
-    public void reportarEstado() {
+    public void reportarEstado(String estado) {
+        this.estado = estado;
+        System.out.println("Estado asignado: " + estado);
 
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     @Override

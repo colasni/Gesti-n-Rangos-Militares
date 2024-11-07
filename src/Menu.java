@@ -39,7 +39,9 @@ public class Menu {
             System.out.println("2. Modificar soldado");
             System.out.println("3. Visualizar informacion soldado");
             System.out.println("4. Asignar mision");
-            System.out.println("5. Salir");
+            System.out.println("5. Asignar estado actual");
+            System.out.println("6. Reporte estado actual");
+            System.out.println("7. Salir");
             System.out.println("Elige una opcion: ");
             opcion1 = scanner.nextInt();
 
@@ -126,7 +128,7 @@ public class Menu {
                             for (Soldado s : soldadosRasos) {
                                 if (s.getId().equals(id)) {
                                     System.out.println("Soldado raso encontrado: " + s.getNombre());
-                                    //encontrado = true;
+                                    encontrado = true;
 
                                     System.out.println("¿Desea modificar el nombre? (S/N)");
                                     String respuesta = scanner.next();
@@ -290,6 +292,7 @@ public class Menu {
                                 System.out.println("Digite la misión que desea asignar al soldado raso: ");
                                 String mision = scanner.next();
                                 soldado.asignarMision(mision);
+                                System.out.println("Misión asignada correctamente.");
                                 encontrado = true;
                                 break;
                             }
@@ -332,14 +335,210 @@ public class Menu {
                     if (encontrado == false) {
                         System.out.println("Soldado no encontrado.");
                     }
+                    break;
+
                 case 5:
+
+                    System.out.println("Digite el nivel del rango para establecer un estado actual");
+                    System.out.println("Digite 1 para SoldadoRaso");
+                    System.out.println("Digite 2 para Teniente");
+                    System.out.println("Digite 3 para Capitan");
+                    System.out.println("Digite 4 para Coronel");
+
+                    nivel = scanner.nextInt();
+                    System.out.println("Digite el ID del soldado al que desea establecer un estado actual: ");
+                    id = scanner.next();
+                    boolean encontro = false;
+
+                    if (nivel == 1) {
+                        for (SoldadoRaso soldado : soldadosRasos) {
+                            if (soldado.getId().equals(id)) {
+                                System.out.println("Digite el estado actual que desea asignar al soldado raso: ");
+                                String estado = scanner.next();
+                                soldado.reportarEstado(estado);
+                                encontro = true;
+                                break;
+                            }
+                        }
+                    } else if (nivel == 2) {
+                        for (Teniente teniente : tenientes) {
+                            if (teniente.getId().equals(id)) {
+                                System.out.println("Digite el estado actual que desea asignar al teniente: ");
+                                String estado = scanner.next();
+                                teniente.reportarEstado(estado);
+                                System.out.println("Estado actual correctamente.");
+                                encontro = true;
+                                break;
+                            }
+                        }
+                    } else if (nivel == 3) {
+                        for (Capitan capitan : capitanes) {
+                            if (capitan.getId().equals(id)) {
+                                System.out.println("Digite el estado actual que desea asignar al capitán: ");
+                                String estado = scanner.next();
+                                capitan.reportarEstado(estado);
+                                System.out.println("Estado actual correctamente.");
+                                encontro = true;
+                                break;
+                            }
+                        }
+                    } else if (nivel == 4) {
+                        for (Coronel coronel : coroneles) {
+                            if (coronel.getId().equals(id)) {
+                                System.out.println("Digite el estado actual que desea asignar al coronel: ");
+                                String estado = scanner.next();
+                                coronel.reportarEstado(estado);
+                                System.out.println("Estado actual correctamente.");
+                                encontro = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (encontro == false) {
+                        System.out.println("Soldado no encontrado.");
+                    }
+
+                    break;
+
+                case 6:
+
+                    while (validar == false) {
+
+                        System.out.println("");
+                        System.out.println("Digite el rango del soldado");
+                        System.out.println("Digite 1 para SoldadoRaso");
+                        System.out.println("Digite 2 para Teniente");
+                        System.out.println("Digite 3 para Capitan");
+                        System.out.println("Digite 4 para Coronel");
+                        nivel = scanner.nextInt();
+
+                        System.out.println("Digite el ID del soldado del que desea conocer su estado actual: ");
+                        id = scanner.next();
+                        boolean encontrar = false;
+                        if (nivel == 1) {
+                            for (Soldado s : soldadosRasos) {
+                                if (s.getId().equals(id)) {
+                                    System.out.println("Soldado raso encontrado: " + s.getNombre());
+                                    if (s.getMision() == null) {
+                                        System.out.println("mision: No tiene mision");
+                                    }
+                                    else {
+                                        System.out.println("mision: " + s.getMision());
+                                    }
+
+                                    if (s.getEstado() == null) {
+                                        System.out.println("Estado: No tiene estado definido");
+                                    }
+                                    else {
+                                        System.out.println("Estado: " + s.getEstado());
+                                    }
+                                    encontrar = true;
+
+                                }
+                            }
+
+                            if (!encontrar) {
+                                System.out.println("No se encontró ningún soldado raso con el ID: " + id);
+                            }
+
+                            validar = true;
+
+                        } else if (nivel == 2) {
+                            for (Teniente t : tenientes) {
+                                if (t.getId().equals(id)) {
+                                    System.out.println("Teniente encontrado: " + t.getNombre());
+                                    if (t.getMision() == null) {
+                                        System.out.println("mision: No tiene mision");
+                                    }
+                                    else {
+                                        System.out.println("mision: " + t.getMision());
+                                    }
+
+                                    if (t.getEstado() == null) {
+                                        System.out.println("Estado: No tiene estado definido");
+                                    }
+                                    else {
+                                        System.out.println("Estado: " + t.getEstado());
+                                    }
+                                    encontrar = true;
+
+                                }
+                            }
+
+                            if (!encontrar) {
+                                System.out.println("No se encontró ningún teniente con el ID: " + id);
+                            }
+
+                            validar = true;
+                        } else if (nivel == 3) {
+                            for (Capitan c : capitanes) {
+                                if (c.getId().equals(id)) {
+                                    System.out.println("Capitan encontrar: " + c.getNombre());
+                                    if (c.getMision() == null) {
+                                        System.out.println("mision: No tiene mision");
+                                    }
+                                    else {
+                                        System.out.println("mision: " + c.getMision());
+                                    }
+
+                                    if (c.getEstado() == null) {
+                                        System.out.println("Estado: No tiene estado definido");
+                                    }
+                                    else {
+                                        System.out.println("Estado: " + c.getEstado());
+                                    }
+                                    encontrar = true;
+
+                                }
+
+                            }
+
+                            if (!encontrar) {
+                                System.out.println("No se encontró ningún capitan con el ID: " + id);
+                            }
+                            validar = true;
+
+                        } else if (nivel == 4) {
+                            for (Coronel c : coroneles) {
+                                if (c.getId().equals(id)) {
+                                    System.out.println("Coronel encontrar: " + c.getNombre());
+                                    if (c.getMision() == null) {
+                                        System.out.println("mision: No tiene mision");
+                                    }
+                                    else {
+                                        System.out.println("mision: " + c.getMision());
+                                    }
+
+                                    if (c.getEstado() == null) {
+                                        System.out.println("Estado: No tiene estado definido");
+                                    }
+                                    else {
+                                        System.out.println("Estado: " + c.getEstado());
+                                    }
+                                    encontrar = true;
+
+                                }
+                            }
+
+
+                            if (!encontrar) {
+                                System.out.println("No se encontró ningún coronel con el ID: " + id);
+                            }
+                        }
+                        validar = true;
+                    }
+
+                    break;
+
+                case 7:
                     System.out.println("");
                     break;
             }
 
             System.out.println();
 
-        }while(opcion1 != 5);
+        }while(opcion1 != 7);
 
         scanner.close();
 

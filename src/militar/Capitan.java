@@ -37,7 +37,16 @@ public class Capitan extends Rango{
 
     @Override
     public void reportarEstado(String estado) {
+        this.estado = estado;
+        System.out.println("Estado asignado: " + estado);
 
+    }
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     @Override

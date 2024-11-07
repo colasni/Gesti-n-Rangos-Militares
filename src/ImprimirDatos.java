@@ -24,6 +24,14 @@ public class ImprimirDatos {
             else {
                 System.out.println("mision: " + soldado.getMision());
             }
+
+            if (soldado.getEstado() == null) {
+                System.out.println("Estado: No tiene estado definido");
+            }
+            else {
+                System.out.println("Estado: " + soldado.getEstado());
+            }
+
             System.out.println("====================================");
 
         }
@@ -41,6 +49,14 @@ public class ImprimirDatos {
             else {
                 System.out.println("mision: " + teniente.getMision());
             }
+
+            if (teniente.getEstado() == null) {
+                System.out.println("Estado: No tiene estado definido");
+            }
+            else {
+                System.out.println("Estado: " + teniente.getEstado());
+            }
+
             System.out.println("====================================");
         }
     }
@@ -58,6 +74,14 @@ public class ImprimirDatos {
             else {
                 System.out.println("mision: " + capitan.getMision());
             }
+
+            if (capitan.getEstado() == null) {
+                System.out.println("Estado: No tiene estado definido");
+            }
+            else {
+                System.out.println("Estado: " + capitan.getEstado());
+            }
+
             System.out.println("====================================");
         }
     }
@@ -74,6 +98,14 @@ public class ImprimirDatos {
             else {
                 System.out.println("mision: " + coronel.getMision());
             }
+
+            if (coronel.getEstado() == null) {
+                System.out.println("Estado: No tiene estado definido");
+            }
+            else {
+                System.out.println("Estado: " + coronel.getEstado());
+            }
+
             System.out.println("====================================");
         }
     }

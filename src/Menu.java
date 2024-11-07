@@ -119,6 +119,7 @@ public class Menu {
                         System.out.println("Digite 3 para Capitan");
                         System.out.println("Digite 4 para Coronel");
                         nivel = scanner.nextInt();
+
                         System.out.println("Digite el ID del soldado que desea modificar: ");
                         id = scanner.next();
                         boolean encontrado = false;
@@ -271,6 +272,7 @@ public class Menu {
                         imprimirDatos.imprimirCoronel(coroneles);
                     }
                     break;
+
                 case 4:
                     System.out.println("Digite el nivel del rango para asignar mision");
                     System.out.println("Digite 1 para SoldadoRaso");

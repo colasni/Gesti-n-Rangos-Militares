@@ -1,3 +1,4 @@
+package militar;
 public class Coronel extends Rango{
     private String nombre;
     private String id;

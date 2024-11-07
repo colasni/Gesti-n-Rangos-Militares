@@ -1,26 +1,27 @@
-public class Capitan extends Rango{
+package militar;
+
+public class Teniente extends Rango{
 
     private String nombre;
     private String id;
     private String rango;
     private int nivel;
-    private int cantidadSoldadosBajoSuMando;
+    private String unidad; 
 
-    public Capitan(String nombre, String id, String rango, int nivel, int cantidadSoldadosBajoSuMando) {
+    public Teniente(String nombre, String id, String rango, int nivel, String unidad) {
         super(nombre, id, rango, nivel);
         this.nombre = nombre;
         this.id = id;
         this.rango = rango;
         this.nivel = nivel;
-        this.cantidadSoldadosBajoSuMando = cantidadSoldadosBajoSuMando;
+        this.unidad = unidad;
         //TODO Auto-generated constructor stub
     }
 
 
-
     @Override
     void realizarAccion() {
-        String accion = "Coordina misiones y lidera estrategias";
+        String accion = "Supervisar soldados rasos";
     }
 
     @Override
@@ -49,12 +50,12 @@ public class Capitan extends Rango{
         this.nombre = nombre;
     }
 
-    public int getCantidadSoldadosBajoSuMando() {
-        return cantidadSoldadosBajoSuMando;
+    public String getUnidad() {
+        return unidad;
     }
 
-    public void setCantidadSoldadosBajoSuMando(int cantidadSoldadosBajoSuMando) {
-        this.cantidadSoldadosBajoSuMando = cantidadSoldadosBajoSuMando;
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
     }
 
     @Override
@@ -86,6 +87,4 @@ public class Capitan extends Rango{
     public void setId(String id) {
         this.id = id;
     }
-
-
 }

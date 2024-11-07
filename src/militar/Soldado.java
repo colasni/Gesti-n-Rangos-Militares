@@ -1,3 +1,4 @@
+package militar;
 public class Soldado {
 
     String nombre;

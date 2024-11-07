@@ -1,3 +1,4 @@
+package militar;
 public class SoldadoRaso extends Rango{
 
     private String nombre;

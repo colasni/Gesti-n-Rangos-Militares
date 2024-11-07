@@ -1,18 +1,11 @@
-## Getting Started
+## Gestion De Rangos Militares en Java <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> 
+<p>
+  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?&font=IBM+Plex+Sans&color=abcdef&size=20&lines=Welcome" /></a>
+</p>
+<p>
+Este proyecto fue creado con el objetivo de fortalecer la comunicación y el trabajo en equipo mediante el uso de Git y GitHub, además de aprender los fundamentos de la Programación Orientada a Objetos (POO) en Java. A pesar de que todavía existen algunas áreas de mejora y ciertas prácticas que optimizar, nuestro propósito es ir refinando el proyecto progresivamente, aplicando mejores prácticas y solucionando errores. Actualmente, puede considerarse un pequeño producto mínimo viable en desarrollo.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Para entender un poco más la idea, hicimos un diagrama UML
+</p>
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+![Uml](https://github.com/user-attachments/assets/e86ad5b8-1d19-4097-b188-a00135be7a3b)

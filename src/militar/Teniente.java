@@ -21,7 +21,7 @@ public class Teniente extends Rango{
 
     @Override
     void realizarAccion() {
-        String accion = "Supervisar soldados rasos";
+        String accion = "Garantizar que el patrullaje sea eficiente y que las órdenes se cumplan adecuadamente.";
     }
 
     @Override
@@ -40,6 +40,45 @@ public class Teniente extends Rango{
         this.estado = estado;
         System.out.println("Estado asignado: " + estado);
 
+    }
+
+    @Override
+    public void patrullar(String nombre, String id) {
+        this.nombre = nombre;
+        this.id = id;
+
+        int randomNumber = (int) (Math.random() * 3) + 1;
+
+        System.out.println("El Teniente "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+
+        if(randomNumber == 1){
+            System.out.println("Supervisar a los soldados rasos durante el patrullaje.");
+        } else if (randomNumber == 2) {
+            System.out.println("Coordinar las rutas de patrullaje y asignar sectores a cada grupo.");
+        } else if (randomNumber == 3) {
+            System.out.println("Actuar como punto de contacto entre los soldados y los rangos superiores.");
+        }
+
+    }
+
+    @Override
+    public void saludar(String nombre) {
+        this.nombre = nombre;
+        String lowerCaseNombre = nombre.toLowerCase();
+
+        char primeraLetra = lowerCaseNombre.charAt(0);
+        char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
+
+        if(primeraLetra==ultimaLetra){
+            System.out.println("¡Buenos días, mi capitán! Todo en orden en el sector asignado.");
+        }else{
+            System.out.println("¡Buenos días, soldados! Preparémonos para la inspección.");
+        }
+    }
+
+    @Override
+    public void regañado() {
+        super.regañado();
     }
 
     public String getEstado() {

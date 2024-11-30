@@ -6,6 +6,7 @@ import militar.Coronel;
 import militar.Soldado;
 import militar.SoldadoRaso;
 import militar.Teniente;
+import util.ImprimirDatos;
 
 public class Menu {
 
@@ -522,7 +523,8 @@ public class Menu {
                             }
 
 
-                            if (!encontrar) {
+                            if (!encontrar
+                            ) {
                                 System.out.println("No se encontró ningún coronel con el ID: " + id);
                             }
                         }

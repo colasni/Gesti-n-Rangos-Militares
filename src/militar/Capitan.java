@@ -21,7 +21,7 @@ public class Capitan extends Rango{
 
     @Override
     void realizarAccion() {
-        String accion = "Coordina misiones y lidera estrategias";
+        String accion = "Planificar y optimizar las operaciones de patrullaje en función de las necesidades estratégicas.";
     }
 
     @Override
@@ -29,6 +29,41 @@ public class Capitan extends Rango{
         this.mision = mision;
         System.out.println("Mision asignada: " + mision);
     }
+
+    @Override
+    public void patrullar(String nombre, String id) {
+        this.nombre = nombre;
+        this.id = id;
+
+        int randomNumber = (int) (Math.random() * 3) + 1;
+
+        System.out.println("El Capitan "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+
+        if(randomNumber == 1){
+            System.out.println("Diseñar las estrategias de patrullaje para áreas críticas.");
+        } else if (randomNumber == 2) {
+            System.out.println("Evaluar informes de los tenientes y soldados rasos para identificar patrones o riesgos.");
+        } else if (randomNumber == 3) {
+            System.out.println("Asegurarse de que se cumplen los protocolos y procedimientos establecidos.");
+        }
+
+    }
+
+    @Override
+    public void saludar(String nombre) {
+        this.nombre = nombre;
+        String lowerCaseNombre = nombre.toLowerCase();
+
+        char primeraLetra = lowerCaseNombre.charAt(0);
+        char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
+
+        if(primeraLetra==ultimaLetra){
+            System.out.println("¡Buenos días, mi coronel! Patrullas desplegadas según las órdenes.");
+        }else{
+            System.out.println("¡Buenos días, equipo! Necesito un informe completo antes del mediodía.");
+        }
+    }
+
 
     @Override
     public String getMision() {

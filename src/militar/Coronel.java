@@ -17,7 +17,26 @@ public class Coronel extends Rango{
 
     @Override
     void realizarAccion() {
-        String accion = "Establece planes a largo plazo y ordena misiones importantes";
+        String accion = "Garantizar la seguridad general y ajustar las políticas de patrullaje según las amenazas o necesidades.";
+    }
+
+    @Override
+    public void patrullar(String nombre, String id) {
+        this.nombre = nombre;
+        this.id = id;
+
+        int randomNumber = (int) (Math.random() * 3) + 1;
+
+        System.out.println("El Coronel "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+
+        if(randomNumber == 1){
+            System.out.println("Supervisar las operaciones generales de patrullaje y evaluar su efectividad.");
+        } else if (randomNumber == 2) {
+            System.out.println("Tomar decisiones de alto nivel sobre la reasignación de recursos o ajustes en las estrategias de vigilancia.");
+        } else if (randomNumber == 3) {
+            System.out.println("Gestionar la comunicación y coordinación entre diferentes áreas o unidades.");
+        }
+
     }
 
     @Override
@@ -35,6 +54,24 @@ public class Coronel extends Rango{
     public void reportarEstado(String estado) {
         this.estado = estado;
         System.out.println("Estado asignado: " + estado);
+
+    }
+
+    @Override
+    public void saludar(String nombre) {
+        this.nombre = nombre;
+        String lowerCaseNombre = nombre.toLowerCase();
+
+        char primeraLetra = lowerCaseNombre.charAt(0);
+        char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
+
+
+        if(primeraLetra==ultimaLetra){
+            System.out.println("¡Buenos días! Procedemos según las instrucciones.");
+        }else{
+            System.out.println("Capitán, asegúrese de que todas las unidades estén en posición.");
+        }
+
 
     }
 

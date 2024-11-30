@@ -18,7 +18,7 @@ public class SoldadoRaso extends Rango{
 
     @Override
     void realizarAccion() {
-        String accion = "Seguir ordenes";
+        String accion = "Ejecutar las operaciones básicas de vigilancia y seguridad.";
     }
 
     @Override
@@ -40,6 +40,42 @@ public class SoldadoRaso extends Rango{
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public void patrullar(String nombre, String id) {
+        this.nombre = nombre;
+        this.id = id;
+
+        int randomNumber = (int) (Math.random() * 3) + 1;
+
+        System.out.println("El soldado raso "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+
+        if(randomNumber == 1){
+            System.out.println("Patrullar áreas asignadas siguiendo rutas establecidas.");
+        } else if (randomNumber == 2) {
+            System.out.println("Reportar incidentes observados durante el patrullaje.");
+        } else if (randomNumber == 3) {
+            System.out.println("Realizar revisiones en puntos de control específicos.");
+        }
+
+    }
+
+    @Override
+    public void saludar(String nombre) {
+        this.nombre = nombre;
+        String lowerCaseNombre = nombre.toLowerCase();
+
+        char primeraLetra = lowerCaseNombre.charAt(0);
+        char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
+
+        if(primeraLetra==ultimaLetra){
+            System.out.println("¡Buenos días! soldado "+ nombre +"reportándose al servicio.");
+        }else{
+            System.out.println("¿Qué tal, compañero? Listo para el turno de patrulla.");
+        }
+
+
     }
 
     @Override

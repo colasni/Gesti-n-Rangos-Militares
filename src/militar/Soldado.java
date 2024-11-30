@@ -13,6 +13,13 @@ public class Soldado {
         this.rango = rango;  
     }
 
+    public void TodosLosSoldados(String id, String rango){
+        this.id=id;
+        this.rango=rango;
+
+
+    }
+
     public void asignarMision(String mision) {
         this.mision = mision;
         System.out.println("Mision asignada: " + mision);
@@ -21,6 +28,22 @@ public class Soldado {
     public void reportarEstado(String estado) {
         this.estado = estado;
         System.out.println("Estado asignado: " + estado);
+
+    }
+
+    public void patrullar(String nombre, String id) {
+
+
+
+    }
+
+    public void saludar(String nombre){
+
+
+    }
+
+    public void regañado(){
+
 
     }
 
@@ -40,6 +63,7 @@ public class Soldado {
     public void mostrarInformacion() {
 
     }
+
 
     public String getNombre() {
         return nombre;

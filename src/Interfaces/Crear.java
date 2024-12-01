@@ -358,5 +358,104 @@ public class Crear extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.ButtonGroup radioRangos;
+
+    public void setTodosLosSoldados(ArrayList<TodosLosSoldados> todosLosSoldados) {
+        this.todosLosSoldados = todosLosSoldados;
+    }
+
+    public void setSoldadosRasos(ArrayList<SoldadoRaso> soldadosRasos) {
+        this.soldadosRasos = soldadosRasos;
+    }
+
+    public void setTenientes(ArrayList<Teniente> tenientes) {
+        this.tenientes = tenientes;
+    }
+
+    public void setCapitanes(ArrayList<Capitan> capitanes) {
+        this.capitanes = capitanes;
+    }
+
+    public void setCoroneles(ArrayList<Coronel> coroneles) {
+        this.coroneles = coroneles;
+    }
+
+    public void setImprimirDatos(ImprimirDatos imprimirDatos) {
+        this.imprimirDatos = imprimirDatos;
+    }
+
+    public void setjButton1(javax.swing.JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public void setjCapitan(javax.swing.JRadioButton jCapitan) {
+        this.jCapitan = jCapitan;
+    }
+
+    public void setjCoronel(javax.swing.JRadioButton jCoronel) {
+        this.jCoronel = jCoronel;
+    }
+
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public void setjLabel2(javax.swing.JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public void setjLabel3(javax.swing.JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public void setjLabel4(javax.swing.JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public void setjLabel5(javax.swing.JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public void setjLabel6(javax.swing.JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public void setjLabel7(javax.swing.JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public void setjRaso(javax.swing.JRadioButton jRaso) {
+        this.jRaso = jRaso;
+    }
+
+    public void setjTeniente(javax.swing.JRadioButton jTeniente) {
+        this.jTeniente = jTeniente;
+    }
+
+    public void setjTextField1(javax.swing.JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public void setjTextField2(javax.swing.JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public void setjTextField3(javax.swing.JTextField jTextField3) {
+        this.jTextField3 = jTextField3;
+    }
+
+    public void setjTextField5(javax.swing.JTextField jTextField5) {
+        this.jTextField5 = jTextField5;
+    }
+
+    public void setjTextField6(javax.swing.JTextField jTextField6) {
+        this.jTextField6 = jTextField6;
+    }
+
+    public void setRadioRangos(javax.swing.ButtonGroup radioRangos) {
+        this.radioRangos = radioRangos;
+    }
+
+    //----------------------------------------------------------------------------------
+    //public void modificarSoldado
     // End of variables declaration
 }

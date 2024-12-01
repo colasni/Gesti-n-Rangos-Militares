@@ -13,7 +13,7 @@ import java.util.List;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
     Crear crear;
-    Modificar m = new Modificar();
+    Modificar m = new Modificar(crear);
     AsignarM as = new AsignarM();
     ModificarEstado rp = new ModificarEstado();
     Acciones ac = new Acciones();
@@ -29,6 +29,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(Crear crear) {
 
         this.crear = crear;
+        Modificar m = new Modificar(crear);
+        this.m = m;
         initComponents();
     }
 

@@ -455,7 +455,4 @@ public class Crear extends javax.swing.JPanel {
         this.radioRangos = radioRangos;
     }
 
-    //----------------------------------------------------------------------------------
-    //public void modificarSoldado
-    // End of variables declaration
 }

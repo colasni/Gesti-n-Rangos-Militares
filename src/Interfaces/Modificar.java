@@ -113,41 +113,30 @@ public class Modificar extends javax.swing.JPanel {
                 if (jRaso.isSelected()) {
                     String id = jTextField2.getText();
                     String nombre = jTextField1.getText();
-                    //System.out.println("nic"+id);
-                    modificarSoldado("1", id,nombre); /* 
+                    modificarSoldado("1", id,nombre,null,0,null); 
                     
                 } else if (jTeniente.isSelected()) {
                     String nombre = jTextField1.getText();
                     String id = jTextField2.getText();
                     String unidad = jTextField3.getText();
-
-                    Teniente teniente = new Teniente(nombre, id, "Teniente", 2, unidad);
-                    agregarTeniente(teniente);
+                    System.out.println(unidad);
+                    modificarSoldado("2", id,nombre,unidad,0,null); 
 
                 } else if (jCapitan.isSelected()) {
                     String nombre = jTextField1.getText();
                     String id = jTextField2.getText();
                     String soldadosMandoStr = jTextField6.getText().trim();
-                    System.out.println(soldadosMandoStr);
-                    if (soldadosMandoStr.isEmpty() || !soldadosMandoStr.matches("\\d+")) {
-                        javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'Estrategia'.");
-                        return;
-                    }
                     int soldadosMando = Integer.parseInt(soldadosMandoStr);
-
-                    Capitan capitan = new Capitan(nombre, id, "Capitan", 3,soldadosMando);
-                    agregarCapitan(capitan);
+                    modificarSoldado("3", id, nombre, null, soldadosMando, null);
 
                 }else if (jCoronel.isSelected()) {
                     String nombre = jTextField1.getText();
                     String id = jTextField2.getText();
                     String estrategia = jTextField5.getText();
-
-                    Coronel coronel = new Coronel(nombre, id, "Coronel", 4,estrategia);
-                    agregarCoronel(coronel);
-                } */
+                    modificarSoldado("4", id, nombre, null, 0, estrategia);
+                } 
             }
-    }});
+        });
 
         jLabel5.setText("Unidad");
 
@@ -264,7 +253,7 @@ public class Modificar extends javax.swing.JPanel {
         // TODO add your handling code here:
     }
 
-    public void modificarSoldado(String rango, String id, String nombre){
+    public void modificarSoldado(String rango, String id, String nombre, String unidad, int soldadosBajoMando, String estrategia){
         ArrayList<SoldadoRaso> soldadosRasos = crear.getSoldadosRasos();
         ArrayList<Teniente> tenientes = crear.getTenientes();
         ArrayList<Capitan> capitanes = crear.getCapitanes();
@@ -275,36 +264,39 @@ public class Modificar extends javax.swing.JPanel {
         switch (rango) {
             case "1":
                 //boolean encontrado = false;
-                for (SoldadoRaso t : soldadosRasos){
-                    if (t.getId().equals(id)) {
+                for (SoldadoRaso s : soldadosRasos){
+                    if (s.getId().equals(id)) {
                         //encontrado = true;
-                        t.setNombre(nombre);
-                        //crear.setSoldadosRasos(soldadosRasos);
+                        s.setNombre(nombre);
                 }
             }
-            /*
                 break;
-            case "Teniente":
-                for (Teniente teniente : tenientes) {
-                    JLabel label = new JLabel("ID: "+teniente.getId()+"      Nombre: "+teniente.getNombre());
-                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    jPanel2.add(label);
+            case "2":
+                for (Teniente t : tenientes) {
+                    if (t.getId().equals(id)) {
+                        t.setNombre(nombre);
+                        t.setUnidad(unidad);
+                    }
                 }
                 break;
-            case "Capitan":
-                for (Capitan capitan : capitanes) {
-                    JLabel label = new JLabel("ID: "+capitan.getId()+"      Nombre: "+capitan.getNombre());
-                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    jPanel2.add(label);
+            case "3":
+                for (Capitan c : capitanes) {
+                    if (c.getId().equals(id)){
+                        c.setNombre(nombre);
+                        c.setCantidadSoldadosBajoSuMando(soldadosBajoMando);
+                        System.out.println(c.getCantidadSoldadosBajoSuMando());
+                    }
                 }
                 break;
-            case "Coronel":
-                for (Coronel coronel : coroneles) {
-                    JLabel label = new JLabel("ID: "+coronel.getId()+"      Nombre: "+coronel.getNombre());
-                    label.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    jPanel2.add(label);
+            case "4":
+                for (Coronel c : coroneles) {
+                    if (c.getId().equals(id)){
+                        c.setNombre(nombre);
+                        c.setEstrategia(estrategia);
+                        System.out.println(c.getEstrategia());
+                    }
                 }
-                break;  */
+                break;  
             default:
                 System.out.println("nada");
                 break;

@@ -4,16 +4,29 @@
  */
 package Interfaces;
 
+
+import java.util.ArrayList;
+import militar.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edna Ordoñez
  */
 public class AsignarM extends javax.swing.JPanel {
+    private ArrayList<SoldadoRaso> soldadosRasos;
+    private ArrayList<Teniente> tenientes;
+    private ArrayList<Capitan> capitanes;
+    private ArrayList<Coronel> coroneles;
+    private String id;
+    private String mision;
+    private Crear crear = new Crear();
 
     /**
      * Creates new form Crear
      */
-    public AsignarM() {
+    public AsignarM(Crear crear) {
+        this.crear = crear;
         initComponents();
     }
 
@@ -97,9 +110,62 @@ public class AsignarM extends javax.swing.JPanel {
         );
     }// </editor-fold>                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                
+        soldadosRasos = crear.getSoldadosRasos();
+        tenientes = crear.getTenientes();
+        capitanes = crear.getCapitanes();
+        coroneles = crear.getCoroneles();
+        id = jTextField4.getText();
+        mision = jTextField1.getText();
+
+        boolean found = false;
+
+        for (SoldadoRaso soldado : soldadosRasos) {
+            if (soldado.getId().equals(id)) {
+            soldado.asignarMision(mision);
+            found = true;
+            break;
+            }
+        }
+
+        if (!found) {
+            for (Teniente teniente : tenientes) {
+            if (teniente.getId().equals(id)) {
+                teniente.asignarMision(mision);
+                found = true;
+                break;
+            }
+            }
+        }
+
+        if (!found) {
+            for (Capitan capitan : capitanes) {
+            if (capitan.getId().equals(id)) {
+                capitan.asignarMision(mision);
+                found = true;
+                break;
+            }
+            }
+        }
+
+        if (!found) {
+            for (Coronel coronel : coroneles) {
+            if (coronel.getId().equals(id)) {
+                coronel.asignarMision(mision);
+                found = true;
+                break;
+            }
+            }
+        }
+
+        if (found) {
+            JOptionPane.showMessageDialog(this, "Misión asignada correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "ID no encontrado.");}
+        }
+
+
+
 
 
     // Variables declaration - do not modify                     

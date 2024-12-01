@@ -3,17 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Interfaces;
+import javax.swing.JOptionPane;
 
+import militar.*;
 /**
  *
  * @author Edna Ordoñez
  */
 public class ModificarEstado extends javax.swing.JPanel {
+    Crear crear;
 
-    /**
-     * Creates new form Crear
-     */
-    public ModificarEstado() {
+    public ModificarEstado(Crear crear) {
+        this.crear = crear;
         initComponents();
     }
 
@@ -97,8 +98,43 @@ public class ModificarEstado extends javax.swing.JPanel {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+        asignarEstado();
+    } 
+    
+    private void asignarEstado(){
+        String id = jTextField4.getText();
+        String estado = jTextField5.getText();
+        boolean encontrado = false;
+        for(SoldadoRaso soldado : crear.getSoldadosRasos()){
+            if(soldado.getId().equals(id)){
+                soldado.setEstado(estado);
+                encontrado = true;
+            }
+        }
+        for(Teniente teniente : crear.getTenientes()){
+            if(teniente.getId().equals(id)){
+                teniente.setEstado(estado);
+                encontrado = true;
+            }
+        }
+        for(Capitan capitan : crear.getCapitanes()){
+            if(capitan.getId().equals(id)){
+                capitan.setEstado(estado);
+                encontrado = true;
+            }
+        }
+        for(Coronel coronel : crear.getCoroneles()){
+            if(coronel.getId().equals(id)){
+                coronel.setEstado(estado);
+                encontrado = true;
+            }
+        }
+        if (encontrado){
+            JOptionPane.showMessageDialog(null, "Estado asignado correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se encontró el soldado con el ID ingresado");
+        }
+    }
 
 
     // Variables declaration - do not modify                     

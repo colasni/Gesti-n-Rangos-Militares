@@ -5,6 +5,9 @@ public class Coronel extends Rango{
     private String rango;
     private int nivel;
     private String estrategia;
+    private String patru;
+    private String salu;
+
 
     public Coronel(String nombre,String id,String rango,int nivel,String estrategia) {
         super(nombre,id,rango,nivel);
@@ -27,14 +30,14 @@ public class Coronel extends Rango{
 
         int randomNumber = (int) (Math.random() * 3) + 1;
 
-        System.out.println("El Coronel "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+        System.out.println("El Coronel ("+ nombre + ") con numero de identificacion: (" + id + ") debe hacer lo siguiente");
 
         if(randomNumber == 1){
-            System.out.println("Supervisar las operaciones generales de patrullaje y evaluar su efectividad.");
+            patru = "Supervisar las operaciones generales de patrullaje y evaluar su efectividad.";
         } else if (randomNumber == 2) {
-            System.out.println("Tomar decisiones de alto nivel sobre la reasignación de recursos o ajustes en las estrategias de vigilancia.");
+            patru = "Tomar decisiones de alto nivel sobre la reasignación de recursos o ajustes en las estrategias de vigilancia.";
         } else if (randomNumber == 3) {
-            System.out.println("Gestionar la comunicación y coordinación entre diferentes áreas o unidades.");
+            patru = "Gestionar la comunicación y coordinación entre diferentes áreas o unidades.";
         }
 
     }
@@ -67,9 +70,9 @@ public class Coronel extends Rango{
 
 
         if(primeraLetra==ultimaLetra){
-            System.out.println("¡Buenos días! Procedemos según las instrucciones.");
+            salu = "¡Buenos días! Procedemos según las instrucciones.";
         }else{
-            System.out.println("Capitán, asegúrese de que todas las unidades estén en posición.");
+            salu = "Coronel, asegúrese de que todas las unidades estén en posición.";
         }
 
 
@@ -130,5 +133,21 @@ public class Coronel extends Rango{
     @Override
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getPatru() {
+        return patru;
+    }
+
+    public void setPatru(String patru) {
+        this.patru = patru;
+    }
+
+    public String getSalu() {
+        return salu;
+    }
+
+    public void setSalu(String salu) {
+        this.salu = salu;
     }
 }

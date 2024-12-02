@@ -5,6 +5,8 @@ public class SoldadoRaso extends Rango{
     private String id;
     private String rango;
     private int nivel;
+    private String patru;
+    private String salu;
     
     
     public SoldadoRaso(String nombre, String id, String rango, int nivel) {
@@ -49,14 +51,14 @@ public class SoldadoRaso extends Rango{
 
         int randomNumber = (int) (Math.random() * 3) + 1;
 
-        System.out.println("El soldado raso "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+        System.out.println("El soldado raso ("+ nombre + ") con numero de identificacion: (" + id + ") debe hacer lo siguiente");
 
         if(randomNumber == 1){
-            System.out.println("Patrullar áreas asignadas siguiendo rutas establecidas.");
+            patru= "Patrullar áreas asignadas siguiendo rutas establecidas.";
         } else if (randomNumber == 2) {
-            System.out.println("Reportar incidentes observados durante el patrullaje.");
+            patru= "Reportar incidentes observados durante el patrullaje.";
         } else if (randomNumber == 3) {
-            System.out.println("Realizar revisiones en puntos de control específicos.");
+            patru= "Realizar revisiones en puntos de control específicos.";
         }
 
     }
@@ -70,9 +72,9 @@ public class SoldadoRaso extends Rango{
         char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
 
         if(primeraLetra==ultimaLetra){
-            System.out.println("¡Buenos días! soldado "+ nombre +"reportándose al servicio.");
+            salu = "¡Buenos días! soldado "+ nombre +" reportándose al servicio.";
         }else{
-            System.out.println("¿Qué tal, compañero? Listo para el turno de patrulla.");
+            salu = "¿Qué tal, compañero? Listo para el turno de patrulla.";
         }
 
 
@@ -122,4 +124,22 @@ public class SoldadoRaso extends Rango{
     public String getMision() {
         return mision;
     }
+
+    public String getPatru() {
+        return patru;
+    }
+
+    public void setPatru(String patrullar) {
+        this.patru = patrullar;
+    }
+
+    public String getSalu() {
+        return salu;
+    }
+
+    public void setSalu(String salu) {
+        this.salu = salu;
+    }
+
+    
 }

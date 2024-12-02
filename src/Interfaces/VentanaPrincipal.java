@@ -16,7 +16,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     Modificar m = new Modificar(crear);
     AsignarM as = new AsignarM(crear);
     ModificarEstado rp = new ModificarEstado(crear);
-    Acciones ac = new Acciones();
+    Acciones ac = new Acciones(crear);
 
     private ArrayList<SoldadoRaso> soldadosRasos;
     private ArrayList<Teniente> tenientes;
@@ -35,6 +35,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.as = as;
         ModificarEstado rp = new ModificarEstado(crear);
         this.rp = rp;
+        Acciones ac = new Acciones(crear);
+        this.ac = ac;
         initComponents();
     }
 

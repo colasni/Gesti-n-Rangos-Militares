@@ -7,6 +7,8 @@ public class Teniente extends Rango{
     private String rango;
     private int nivel;
     private String unidad; 
+    private String patru;
+    private String salu;
 
     public Teniente(String nombre, String id, String rango, int nivel, String unidad) {
         super(nombre, id, rango, nivel);
@@ -49,14 +51,14 @@ public class Teniente extends Rango{
 
         int randomNumber = (int) (Math.random() * 3) + 1;
 
-        System.out.println("El Teniente "+ nombre + "con numero de identificacion" + id + "debe hacer lo siguiente");
+        System.out.println("El Teniente ("+ nombre + ") con numero de identificacion: (" + id + ") debe hacer lo siguiente");
 
         if(randomNumber == 1){
-            System.out.println("Supervisar a los soldados rasos durante el patrullaje.");
+            patru = "Supervisar a los soldados rasos durante el patrullaje.";
         } else if (randomNumber == 2) {
-            System.out.println("Coordinar las rutas de patrullaje y asignar sectores a cada grupo.");
+            patru = "Coordinar las rutas de patrullaje y asignar sectores a cada grupo.";
         } else if (randomNumber == 3) {
-            System.out.println("Actuar como punto de contacto entre los soldados y los rangos superiores.");
+            patru = "Actuar como punto de contacto entre los soldados y los rangos superiores.";
         }
 
     }
@@ -70,9 +72,9 @@ public class Teniente extends Rango{
         char ultimaLetra = lowerCaseNombre.charAt(lowerCaseNombre.length() - 1);
 
         if(primeraLetra==ultimaLetra){
-            System.out.println("¡Buenos días, mi capitán! Todo en orden en el sector asignado.");
+            salu = "¡Buenos días, mi capitán! Todo en orden en el sector asignado.";
         }else{
-            System.out.println("¡Buenos días, soldados! Preparémonos para la inspección.");
+            salu = "¡Buenos días, soldados! Preparémonos para la inspección.";
         }
     }
 
@@ -136,4 +138,25 @@ public class Teniente extends Rango{
     public void setId(String id) {
         this.id = id;
     }
+
+
+    public String getPatru() {
+        return patru;
+    }
+
+
+    public void setPatru(String patru) {
+        this.patru = patru;
+    }
+
+
+    public String getSalu() {
+        return salu;
+    }
+
+
+    public void setSalu(String salu) {
+        this.salu = salu;
+    }
+    
 }

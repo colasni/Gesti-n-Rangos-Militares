@@ -12,6 +12,7 @@ public class App {
         //menu.imprimirMenu();
 
         VentanaPrincipal ventana = new VentanaPrincipal(crear);
+        ventana.setResizable(false);
         ventana.setVisible(true);
         ventana.setLocationRelativeTo(null);
     }

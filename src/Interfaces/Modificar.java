@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Modificar extends javax.swing.JPanel {
     Crear crear;
@@ -20,6 +21,7 @@ public class Modificar extends javax.swing.JPanel {
     private ArrayList<Teniente> tenientes;
     private ArrayList<Capitan> capitanes;
     private ArrayList<Coronel> coroneles;
+    private boolean encontrado = false;
 
     public Modificar(Crear crear) {
         this.crear = crear;
@@ -108,8 +110,6 @@ public class Modificar extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-                boolean encontrado = false;
-
                 
                 if (jRaso.isSelected()) {
                     String id = jTextField2.getText();
@@ -121,7 +121,7 @@ public class Modificar extends javax.swing.JPanel {
                     String id = jTextField2.getText();
                     String unidad = jTextField3.getText();
                     System.out.println(unidad);
-                    modificarSoldado("2", id,nombre,unidad,0,null); 
+                    modificarSoldado("2", id,nombre,unidad,0,null);
 
                 } else if (jCapitan.isSelected()) {
                     String nombre = jTextField1.getText();
@@ -130,14 +130,24 @@ public class Modificar extends javax.swing.JPanel {
                     int soldadosMando = Integer.parseInt(soldadosMandoStr);
                     modificarSoldado("3", id, nombre, null, soldadosMando, null);
 
+
                 }else if (jCoronel.isSelected()) {
                     String nombre = jTextField1.getText();
                     String id = jTextField2.getText();
                     String estrategia = jTextField5.getText();
                     modificarSoldado("4", id, nombre, null, 0, estrategia);
+                }
+
+                System.out.println(encontrado);
+                if (!encontrado) {
+                    JOptionPane.showMessageDialog(Modificar.this,"ID no encontrado");
+                    
+                } else {
+                    JOptionPane.showMessageDialog(Modificar.this, "Soldado modificado correctamente.");
+                    }
                 } 
-            }
-        });
+            });
+        
 
         jLabel5.setText("Unidad");
 
@@ -264,36 +274,54 @@ public class Modificar extends javax.swing.JPanel {
         
         switch (rango) {
             case "1":
-                //boolean encontrado = false;
+                encontrado = false;
                 for (SoldadoRaso s : soldadosRasos){
                     if (s.getId().equals(id)) {
-                        //encontrado = true;
+
+                        encontrado = true;
                         s.setNombre(nombre);
+                        jTextField1.setText("");
+                        jTextField2.setText("");
                 }
             }
                 break;
             case "2":
+                encontrado = false;
                 for (Teniente t : tenientes) {
                     if (t.getId().equals(id)) {
                         t.setNombre(nombre);
                         t.setUnidad(unidad);
+                        jTextField1.setText("");
+                        jTextField2.setText("");
+                        jTextField3.setText("");
+                        encontrado = true;
                     }
                 }
                 break;
             case "3":
+                encontrado = false;
                 for (Capitan c : capitanes) {
                     if (c.getId().equals(id)){
                         c.setNombre(nombre);
                         c.setCantidadSoldadosBajoSuMando(soldadosBajoMando);
+                        jTextField1.setText("");
+                        jTextField2.setText("");
+                        jTextField6.setText("");
                         System.out.println(c.getCantidadSoldadosBajoSuMando());
+                        encontrado = true;
                     }
                 }
                 break;
             case "4":
+                encontrado = false;
                 for (Coronel c : coroneles) {
                     if (c.getId().equals(id)){
                         c.setNombre(nombre);
                         c.setEstrategia(estrategia);
+                        encontrado = true;
+                        jTextField1.setText("");
+                        jTextField2.setText("");
+                        jTextField5.setText("");
                         System.out.println(c.getEstrategia());
                     }
                 }

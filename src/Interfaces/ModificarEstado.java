@@ -6,10 +6,7 @@ package Interfaces;
 import javax.swing.JOptionPane;
 
 import militar.*;
-/**
- *
- * @author Edna Ordoñez
- */
+
 public class ModificarEstado extends javax.swing.JPanel {
     Crear crear;
 
@@ -131,6 +128,8 @@ public class ModificarEstado extends javax.swing.JPanel {
         }
         if (encontrado){
             JOptionPane.showMessageDialog(null, "Estado asignado correctamente");
+            jTextField4.setText("");
+            jTextField5.setText("");
         }else{
             JOptionPane.showMessageDialog(null, "No se encontró el soldado con el ID ingresado");
         }

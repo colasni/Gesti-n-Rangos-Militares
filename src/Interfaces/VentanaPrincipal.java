@@ -324,30 +324,87 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             case "Soldado raso":
                 imprimirDatos.imprimirSoldadoRaso(soldadosRasos);
                 for (SoldadoRaso soldadoRaso : soldadosRasos) {
+                    if (soldadoRaso.getMision() == null) {
+                        soldadoRaso.asignarMision("Sin misión");
+                    }
+                    if (soldadoRaso.getEstado() == null) {
+                        soldadoRaso.setEstado("Sin estado");
+                    }
                     JLabel label = new JLabel("ID: "+soldadoRaso.getId()+"      Nombre: "+soldadoRaso.getNombre());
+                    JLabel lab = new JLabel("Misión: "+soldadoRaso.getMision()+"      Estado: "+soldadoRaso.getEstado());
+                    JLabel sep = new JLabel("___________________________________");
                     label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
                     jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(sep);
                 }
                 break;
             case "Teniente":
                 for (Teniente teniente : tenientes) {
+                    if (teniente.getMision() == null) {
+                        teniente.asignarMision("Sin misión");
+                    }
+                    if (teniente.getEstado() == null) {
+                        teniente.setEstado("Sin estado");
+                    }
                     JLabel label = new JLabel("ID: "+teniente.getId()+"      Nombre: "+teniente.getNombre());
+                    JLabel lab = new JLabel("Misión: "+teniente.getMision()+"      Estado: "+teniente.getEstado());
+                    JLabel uni = new JLabel("Unidad: "+teniente.getUnidad());
+                    JLabel sep = new JLabel("___________________________________");
                     label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    uni.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
                     jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(uni);
+                    jPanel2.add(sep);
                 }
                 break;
             case "Capitan":
                 for (Capitan capitan : capitanes) {
+                    if (capitan.getMision() == null) {
+                        capitan.asignarMision("Sin misión");
+                    }
+                    if (capitan.getEstado() == null) {
+                        capitan.setEstado("Sin estado");
+                    }
                     JLabel label = new JLabel("ID: "+capitan.getId()+"      Nombre: "+capitan.getNombre());
+                    JLabel lab = new JLabel("Misión: "+capitan.getMision()+"      Estado: "+capitan.getEstado());
+                    JLabel sep = new JLabel("___________________________________");
+                    JLabel bajo = new JLabel("Soldados a cargo: "+ capitan.getCantidadSoldadosBajoSuMando());
                     label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    bajo.setAlignmentX(Component.CENTER_ALIGNMENT);
                     jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(bajo);
+                    jPanel2.add(sep);
                 }
                 break;
             case "Coronel":
                 for (Coronel coronel : coroneles) {
+                    if (coronel.getMision() == null) {
+                        coronel.asignarMision("Sin misión");
+                    }
+                    if (coronel.getEstado() == null) {
+                        coronel.setEstado("Sin estado");
+                    }
                     JLabel label = new JLabel("ID: "+coronel.getId()+"      Nombre: "+coronel.getNombre());
+                    JLabel lab = new JLabel("Misión: "+coronel.getMision()+"      Estado: "+coronel.getEstado());
+                    JLabel sep = new JLabel("___________________________________");
+                    JLabel est = new JLabel("Estrategia: "+ coronel.getEstrategia());
                     label.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    lab.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    sep.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    est.setAlignmentX(Component.CENTER_ALIGNMENT);
                     jPanel2.add(label);
+                    jPanel2.add(lab);
+                    jPanel2.add(est);
+                    jPanel2.add(sep);
                 }
                 break;
             default:

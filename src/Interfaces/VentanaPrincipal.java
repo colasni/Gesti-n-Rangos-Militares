@@ -479,7 +479,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        crear.getTodosLosSoldados().clear();
+        crear.getSoldadosRasos().clear();
+        crear.getTenientes().clear();
+        crear.getCapitanes().clear();
+        crear.getCoroneles().clear();
+        JOptionPane.showMessageDialog(this, "Todos los datos han sido reseteados");
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -531,6 +536,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Principal.revalidate();
         Principal.repaint();
     }
+
+
 
 
     // Variables declaration - do not modify

@@ -160,6 +160,8 @@ public class AsignarM extends javax.swing.JPanel {
 
         if (found) {
             JOptionPane.showMessageDialog(this, "Misión asignada correctamente.");
+            jTextField4.setText("");
+            jTextField1.setText("");
         } else {
             JOptionPane.showMessageDialog(this, "ID no encontrado.");}
         }

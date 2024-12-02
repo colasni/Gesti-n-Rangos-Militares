@@ -14,8 +14,8 @@ import java.util.List;
 public class VentanaPrincipal extends javax.swing.JFrame {
     Crear crear;
     Modificar m = new Modificar(crear);
-    AsignarM as = new AsignarM();
-    ModificarEstado rp = new ModificarEstado();
+    AsignarM as = new AsignarM(crear);
+    ModificarEstado rp = new ModificarEstado(crear);
     Acciones ac = new Acciones();
 
     private ArrayList<SoldadoRaso> soldadosRasos;
@@ -31,6 +31,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.crear = crear;
         Modificar m = new Modificar(crear);
         this.m = m;
+        AsignarM as = new AsignarM(crear);
+        this.as = as;
+        ModificarEstado rp = new ModificarEstado(crear);
+        this.rp = rp;
         initComponents();
     }
 

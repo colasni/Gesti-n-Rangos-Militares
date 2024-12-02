@@ -105,83 +105,108 @@ public class Crear extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(0, 204, 0));
         jButton1.setText("AGREGAR");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                if (!jRaso.isSelected() && !jTeniente.isSelected() && !jCapitan.isSelected() && !jCoronel.isSelected()) {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Por favor seleccione un rango.");
+                }else{
+                    boolean encontrado = false;
+                    if (jRaso.isSelected()) {
+                        String nombre = jTextField1.getText();
+                        String id = jTextField2.getText();
+                        for(TodosLosSoldados todos : todosLosSoldados){
+                            if(todos.getId().equals(id)){
+                                javax.swing.JOptionPane.showMessageDialog(null, "Por favor escriba un 'ID' valido.");
+                                return;
+                            }
+                        }
+                        TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,1);
+                        agregarTodosLosSoldados(todosLosSoldados);
 
-                if (jRaso.isSelected()) {
-                    String nombre = jTextField1.getText();
-                    String id = jTextField2.getText();
-                    for(TodosLosSoldados todos : todosLosSoldados){
-                        if(todos.getId().equals(id)){
-                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
+                        SoldadoRaso soldadoRaso = new SoldadoRaso(nombre, id, "Soldado raso", 1);
+                        agregarSoldado(soldadoRaso);
+                        encontrado = true;
+
+
+                    } else if (jTeniente.isSelected()) {
+                        String nombre = jTextField1.getText();
+                        String id = jTextField2.getText();
+                        String unidad = jTextField3.getText();
+                        for(TodosLosSoldados todos : todosLosSoldados){
+                            if(todos.getId().equals(id)){
+                                javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
+                                return;
+                            }
+                        }
+                        TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,2);
+                        agregarTodosLosSoldados(todosLosSoldados);
+
+                        Teniente teniente = new Teniente(nombre, id, "Teniente", 2, unidad);
+                        agregarTeniente(teniente);
+
+
+                        jTextField3.setText("");
+                        encontrado = true;
+
+                    } else if (jCapitan.isSelected()) {
+                        String nombre = jTextField1.getText();
+                        String id = jTextField2.getText();
+                        String soldadosMandoStr = jTextField6.getText().trim();
+                        System.out.println(soldadosMandoStr);
+                        if (soldadosMandoStr.isEmpty() || !soldadosMandoStr.matches("\\d+")) {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'Soldados bajo el mando'.");
                             return;
                         }
-                    }
-                    TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,1);
-                    agregarTodosLosSoldados(todosLosSoldados);
+                        int soldadosMando = Integer.parseInt(soldadosMandoStr);
 
-                    SoldadoRaso soldadoRaso = new SoldadoRaso(nombre, id, "Soldado raso", 1);
-                    agregarSoldado(soldadoRaso);
-
-                } else if (jTeniente.isSelected()) {
-                    String nombre = jTextField1.getText();
-                    String id = jTextField2.getText();
-                    String unidad = jTextField3.getText();
-                    for(TodosLosSoldados todos : todosLosSoldados){
-                        if(todos.getId().equals(id)){
-                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
-                            return;
+                        for(TodosLosSoldados todos : todosLosSoldados){
+                            if(todos.getId().equals(id)){
+                                javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
+                                return;
+                            }
                         }
-                    }
-                    TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,2);
-                    agregarTodosLosSoldados(todosLosSoldados);
+                        TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,3);
+                        agregarTodosLosSoldados(todosLosSoldados);
 
-                    Teniente teniente = new Teniente(nombre, id, "Teniente", 2, unidad);
-                    agregarTeniente(teniente);
+                        Capitan capitan = new Capitan(nombre, id, "Capitan", 3,soldadosMando);
+                        agregarCapitan(capitan);
 
-                } else if (jCapitan.isSelected()) {
-                    String nombre = jTextField1.getText();
-                    String id = jTextField2.getText();
-                    String soldadosMandoStr = jTextField6.getText().trim();
-                    System.out.println(soldadosMandoStr);
-                    if (soldadosMandoStr.isEmpty() || !soldadosMandoStr.matches("\\d+")) {
-                        javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'Soldados bajo el mando'.");
-                        return;
-                    }
-                    int soldadosMando = Integer.parseInt(soldadosMandoStr);
+                        jCapitan.setSelected(false);
+                        jTextField6.setText("");
+                        encontrado = true;
 
-                    for(TodosLosSoldados todos : todosLosSoldados){
-                        if(todos.getId().equals(id)){
-                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
-                            return;
+                    }else if (jCoronel.isSelected()) {
+                        String nombre = jTextField1.getText();
+                        String id = jTextField2.getText();
+                        String estrategia = jTextField5.getText();
+
+                        for(TodosLosSoldados todos : todosLosSoldados){
+                            if(todos.getId().equals(id)){
+                                javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
+                                return;
+                            }
                         }
+                        TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,4);
+                        agregarTodosLosSoldados(todosLosSoldados);
+
+                        Coronel coronel = new Coronel(nombre, id, "Coronel", 4,estrategia);
+                        agregarCoronel(coronel);
+
+
+                        jTextField5.setText("");
+                        encontrado = true;
+                    }  
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+
+                    if (encontrado){
+                        javax.swing.JOptionPane.showMessageDialog(null, "Soldado creado correctamente");
+                    }else{
                     }
-                    TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,3);
-                    agregarTodosLosSoldados(todosLosSoldados);
-
-                    Capitan capitan = new Capitan(nombre, id, "Capitan", 3,soldadosMando);
-                    agregarCapitan(capitan);
-
-                }else if (jCoronel.isSelected()) {
-                    String nombre = jTextField1.getText();
-                    String id = jTextField2.getText();
-                    String estrategia = jTextField5.getText();
-
-                    for(TodosLosSoldados todos : todosLosSoldados){
-                        if(todos.getId().equals(id)){
-                            javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number for 'ID'.");
-                            return;
-                        }
-                    }
-                    TodosLosSoldados todosLosSoldados = new TodosLosSoldados(id,4);
-                    agregarTodosLosSoldados(todosLosSoldados);
-
-                    Coronel coronel = new Coronel(nombre, id, "Coronel", 4,estrategia);
-                    agregarCoronel(coronel);
                 }
-            }
-        });
+        }});
 
         jLabel5.setText("Unidad");
 

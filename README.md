@@ -5,7 +5,7 @@
 <p>
 Este proyecto fue creado con el objetivo de fortalecer la comunicación y el trabajo en equipo mediante el uso de Git y GitHub, además de aprender los fundamentos de la Programación Orientada a Objetos (POO) en Java. A pesar de que todavía existen algunas áreas de mejora y ciertas prácticas que optimizar, nuestro propósito es ir refinando el proyecto progresivamente, aplicando mejores prácticas y solucionando errores. Actualmente, puede considerarse un pequeño producto mínimo viable en desarrollo.
 
-Para entender un poco más la idea, hicimos un diagrama UML
+Para entender un poco más la idea, esta es la interfaz visual:
 </p>
 
-![Uml](https://github.com/user-attachments/assets/e86ad5b8-1d19-4097-b188-a00135be7a3b)
+![Captura de pantalla 2024-12-01 225234](https://github.com/user-attachments/assets/8697c652-086f-49bd-b371-a7ce160166a4)

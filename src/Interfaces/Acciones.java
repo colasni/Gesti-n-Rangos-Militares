@@ -119,22 +119,27 @@ public class Acciones extends javax.swing.JPanel {
                             raso.patrullar(nombre, id);
                             patrullar = raso.getPatru();
                             JOptionPane.showMessageDialog(Acciones.this, patrullar);
+                            break;
                         }
                         break;
+
                     case 2:
                         for (Teniente teniente : crear.getTenientes()) {
                             String nombre = teniente.getNombre();
                             teniente.patrullar(nombre, id);
                             patrullar = teniente.getPatru();
                             JOptionPane.showMessageDialog(Acciones.this, patrullar);
+                            break;
                         }
                         break;
+
                     case 3:
                         for (Capitan capitan : crear.getCapitanes()) {
                             String nombre = capitan.getNombre();
                             capitan.patrullar(nombre, id);
                             patrullar = capitan.getPatru();
                             JOptionPane.showMessageDialog(Acciones.this, patrullar);
+                            break;
                         }
                         break;
                     case 4:
@@ -143,6 +148,7 @@ public class Acciones extends javax.swing.JPanel {
                             coronel.patrullar(nombre, id);
                             patrullar = coronel.getPatru();
                             JOptionPane.showMessageDialog(Acciones.this, patrullar);
+                            break;
                         }
                         break;
                     default:
@@ -171,6 +177,7 @@ public class Acciones extends javax.swing.JPanel {
                             JOptionPane.showMessageDialog(Acciones.this, saludo);
                             break;
                         }
+                        break;
                         
                     case 2:
                         for (Teniente teniente : crear.getTenientes()) {
@@ -180,6 +187,7 @@ public class Acciones extends javax.swing.JPanel {
                             JOptionPane.showMessageDialog(Acciones.this, saludo);
                             break;
                         }
+                        break;
                     case 3:
                         for (Capitan capitan : crear.getCapitanes()) {
                             String nombre = capitan.getNombre();
@@ -188,6 +196,7 @@ public class Acciones extends javax.swing.JPanel {
                             JOptionPane.showMessageDialog(Acciones.this, saludo);
                             break;
                         }
+                        break;
                     case 4:
                         for (Coronel coronel : crear.getCoroneles()) {
                             String nombre = coronel.getNombre();
@@ -196,6 +205,7 @@ public class Acciones extends javax.swing.JPanel {
                             JOptionPane.showMessageDialog(Acciones.this, saludo);
                             break;
                         }
+                        break;
                     default:
 
                         break;
